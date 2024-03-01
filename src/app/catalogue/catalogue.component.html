@@ -1,0 +1,17 @@
+<div class="container mx-auto mt-8">
+    <app-search (searchCriteria)="onSearch($event)"></app-search>
+  
+    <div *ngIf="filteredProducts.length === 0" class="text-center mt-4 text-gray-600">
+      Aucun produit trouvé.
+    </div>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+      <div *ngFor="let product of filteredProducts ? filteredProducts : products" class="bg-white p-4 rounded-lg shadow-md">
+        <img [src]="product.image" alt="{{ product.name }}" class="w-full h-40 object-cover mb-2 rounded-md">
+        <h3 class="text-xl font-bold">{{ product.name }}</h3>
+        <p class="text-gray-600">{{ product.brand }} - {{ product.model }} ({{ product.year }})</p>
+        <p class="text-green-700 font-bold mt-2">{{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
+      </div>
+    </div>
+  </div>
+  

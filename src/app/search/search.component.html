@@ -1,0 +1,24 @@
+<!-- search.component.html -->
+<form (submit)="search()" [formGroup]="searchForm" class="p-4 bg-white rounded-lg shadow-md">
+  <div class="mb-4">
+    <label for="year">Année du véhicule:</label>
+    <input id="year" formControlName="year" type="number" class="p-2 border rounded">
+  </div>
+
+  <div class="mb-4">
+    <label for="brand">Marque:</label>
+    <input id="brand" formControlName="brand" type="text" class="p-2 border rounded">
+  </div>
+
+  <div class="mb-4">
+    <label for="minPrice">Prix minimum:</label>
+    <input id="minPrice" formControlName="minPrice" type="number" class="p-2 border rounded">
+  </div>
+
+  <div class="mb-4">
+    <label for="maxPrice">Prix maximum:</label>
+    <input id="maxPrice" formControlName="maxPrice" type="number" class="p-2 border rounded">
+  </div>
+
+  <button type="submit" class="bg-blue-500 text-white p-2 rounded">Rechercher</button>
+</form>

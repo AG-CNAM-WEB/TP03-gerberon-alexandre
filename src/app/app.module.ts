@@ -9,7 +9,11 @@ import { FooterComponent } from "./footer/footer.component";
 import { BodyComponent } from "./body/body.component";
 import { HeaderComponent } from "./header/header.component";
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ProductBackendService } from './product-backend.service';
+import { CatalogueComponent } from './catalogue/catalogue.component';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
     declarations: [
         AppComponent,
@@ -17,15 +21,19 @@ import { ReactiveFormsModule } from '@angular/forms';
         ProfileComponent,
         FooterComponent,
         BodyComponent,
-        HeaderComponent
+        HeaderComponent,
+        CatalogueComponent,
+        SearchComponent
     ],
-    providers: [],
+    providers: [ProductBackendService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
         RouterModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule,
+        FormsModule
     ]
 })
 export class AppModule { }
