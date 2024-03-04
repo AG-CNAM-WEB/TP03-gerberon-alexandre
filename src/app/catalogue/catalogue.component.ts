@@ -28,7 +28,8 @@ export class CatalogueComponent implements OnInit {
     // Logique de filtrage
     return this.products.filter(product =>
       (criteria.year === null || product.year === criteria.year) &&
-      (criteria.brand === '' || product.brand.toLowerCase().includes(criteria.brand.toLowerCase())) &&
+      (criteria.brand === null || product.brand.toLowerCase().includes(criteria.brand.toLowerCase())) &&
+      (criteria.model === null || product.model.toLowerCase().includes(criteria.model.toLowerCase())) &&
       (criteria.minPrice === null || product.price >= criteria.minPrice) &&
       (criteria.maxPrice === null || product.price <= criteria.maxPrice)
     );
