@@ -30,6 +30,6 @@
     <!-- Bouton de réinitialisation des critères de recherche -->
     <button type="button" class="bg-gray-300 text-gray-700 py-2 px-4 rounded-md" (click)="resetSearch()">Effacer</button>
 
-    <button type="submit" class="bg-blue-500 text-white p-2 rounded ml-2">Rechercher</button>
+    <button [disabled]="!searchForm.valid" type="submit" class="bg-blue-500 text-white p-2 rounded ml-2">Rechercher</button>
   </div>
 </form>
